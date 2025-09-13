@@ -3,7 +3,7 @@
 
 ## 🚀 Project Information
 
-**Primary Contact**: J Madhan - [@YourTelegramHandle](https://t.me/MadhanJ)  
+**Primary Contact**: J Madhan - (https://t.me/MadhanJ)  
 **Team**: Solo  
 **Project Title**: ONEDeFi - AI-Powered Multi-Chain DeFi MCP Server  
 
@@ -192,8 +192,6 @@ This project showcases cutting-edge AI integration in DeFi:
 
 ---
 
-**Contact**: For questions, issues, or contributions, please reach out via Telegram [@YourTelegramHandle](https://t.me/YourTelegramHandle)
-
-**Live Demo**: [Your Replit URL]
+**Contact**: For questions, issues, or contributions, please reach out via Telegram [@MadhanJ](https://t.me/MadhanJ)
 
 *Built with ❤️ for the future of AI-powered DeFi*
