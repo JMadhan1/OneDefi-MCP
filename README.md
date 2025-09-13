@@ -3,7 +3,7 @@
 
 ## 🚀 Project Information
 
-**Primary Contact**: [Your Name] - [@YourTelegramHandle](https://t.me/YourTelegramHandle)  
+**Primary Contact**: J Madhan - [@YourTelegramHandle](https://t.me/MadhanJ)  
 **Team**: Solo  
 **Project Title**: ONEDeFi - AI-Powered Multi-Chain DeFi MCP Server  
 
