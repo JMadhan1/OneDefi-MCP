@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: onedefi-server
+    env: python
+    buildCommand: pip install -r requirements.txt || uv sync
+    startCommand: gunicorn main:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: onedefi-db
+          property: connectionString
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: FLASK_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+
+databases:
+  - name: onedefi-db
+    databaseName: onedefi
+    user: onedefi_user
+    plan: free
+
