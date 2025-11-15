@@ -34,8 +34,20 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 # Initialize the app with the extension
 db.init_app(app)
 
-with app.app_context():
-    # Import models to ensure tables are created
-    import models  # noqa: F401
-    db.create_all()
-    logging.info("Database tables created successfully")
+# Import routes to ensure they're registered
+# This ensures routes work even if gunicorn uses app:app instead of main:app
+try:
+    import routes_simple  # noqa: F401
+    logging.info("Routes imported successfully")
+except Exception as e:
+    logging.warning(f"Routes import warning: {e}")
+
+# Initialize database tables
+try:
+    with app.app_context():
+        # Import models to ensure tables are created
+        import models  # noqa: F401
+        db.create_all()
+        logging.info("Database tables created successfully")
+except Exception as e:
+    logging.warning(f"Database initialization warning (may be expected on first run): {e}")

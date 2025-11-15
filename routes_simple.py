@@ -36,7 +36,16 @@ except ImportError as e:
 @app.route('/')
 def index():
     """Landing page"""
-    return render_template('index.html')
+    try:
+        return render_template('index.html')
+    except Exception as e:
+        logger.error(f"Error rendering index: {e}", exc_info=True)
+        return f"Error loading page: {str(e)}", 500
+
+@app.route('/health')
+def health():
+    """Health check endpoint"""
+    return jsonify({"status": "healthy", "service": "ONEDeFi Server"}), 200
 
 @app.route('/dashboard')
 def dashboard():
